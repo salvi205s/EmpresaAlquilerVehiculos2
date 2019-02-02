@@ -120,4 +120,25 @@ public class EmpresaAlquilerVehiculos {
     public void setAlquileres(VehiculoAlquilado[] alquileres) {
         this.alquileres = alquileres;
     }
+
+    //Añade un nuevo cliente a la lista de
+//clientes de la empresa. El método registrarCliente(Cliente cliente)
+//almacena un objeto de la clase Cliente en la última posición útil del array
+//clientes, dada por la variable totalClientes y a continuación incrementa
+//la variable totalClientes.
+    public void registrarCliente(Cliente nuevo) {
+        this.clientes[this.totalClientes] = nuevo;
+        this.totalClientes++;
+    }
+
+//Añade un vehículo al catálogo
+//de vehículos de la empresa. El método registrarVehiculo(Vehiculo vehiculo)
+//almacena un objeto de la clase Vehiculo en la última posición del array
+//vehiculos, dada por la variable totalVehiculos y a continuación incrementa
+//la variable totalVehiculos.
+    public void registrarVehiculo(Vehiculo nuevo) {
+        this.vehiculos[this.totalVehiculos] = nuevo;
+        this.totalVehiculos++;
+
+    }
 }
