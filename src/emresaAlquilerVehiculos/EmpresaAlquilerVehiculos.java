@@ -141,4 +141,24 @@ public class EmpresaAlquilerVehiculos {
         this.totalVehiculos++;
 
     }
+
+    //Muestra la relación de clientes de la empresa. Este
+//método recorre el array clientes y va mostrando los datos de cada
+//cliente.
+    public void imprimirClientes() {
+        System.out.println("NIF cliente\tNombre");
+        for (int i = 0; i < this.totalClientes; i++) {
+            System.out.println(clientes[i].toString());
+        }
+    }
+
+//Muestra el catálogo de vehículos de la empresa,
+//recorriendo el array vehiculos y llamando al método getAtributos() de cada
+//uno .
+    public void imprimirVehiculos() {
+        System.out.println("Matricula\tModelo\t\tColor\tImporte\tDisponible\n");
+        for (int i = 0; i < this.totalVehiculos; i++) {
+            System.out.println(vehiculos[i].toString());
+        }
+    }
 }
