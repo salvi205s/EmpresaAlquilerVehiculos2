@@ -16,7 +16,7 @@ public class MisVehiculos {
      */
     public static void main(String[] args) {
         EmpresaAlquilerVehiculos easydrive = new EmpresaAlquilerVehiculos("A-28-187189", "easy drive", "www.easydrive.com");
-        
+
         //Registro los clientes de la empresa
         easydrive.registrarCliente(new Cliente("X5618927C", "Juan", "González López"));
 
@@ -32,8 +32,7 @@ public class MisVehiculos {
         easydrive.registrarVehiculo(new Vehiculo("4090 TUR", "SEAT", "Ibiza", "Blanco", 90.0, false));
 
         easydrive.registrarVehiculo(new Vehiculo("4100 FUR", "Fiat", "Ducato", "Azul", 80.0, true));
-        
-        
+
         // imprime la relación de clientes de easydrive
         easydrive.imprimirClientes();
 
@@ -41,6 +40,21 @@ public class MisVehiculos {
 
         // imprime el catálogo de vehículos de easydrive
         easydrive.imprimirVehiculos();
+
+        System.out.println("----------------------------------------------------------------------");
+
+        //probando
+//        easydrive.getVehiculo("4090 TUR");
+//        easydrive.getCliente("X5618927C");
+        easydrive.alquilarVehiculo("4100 FUR", "X5618927C", 1);
+
+        easydrive.imprimirVehiculos();
+        System.out.println("----------------------------------------------------------------------");
+
+        easydrive.recibirVehiculo("4100 FUR");
+
+        easydrive.imprimirVehiculos();
+
     }
-    
+
 }
