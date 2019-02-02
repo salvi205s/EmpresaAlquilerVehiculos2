@@ -192,4 +192,32 @@ cliente, un vehículo, la fecha actual y los días de alquiler.*/
         }
         return null;
     }
+
+    public void alquilarVehiculo(String matricula, String nif, int dias) {
+        Cliente cliente = getCliente(nif);
+        Vehiculo vehiculo = getVehiculo(matricula);
+        // busca el cliente con el NIF dado en el array
+        // clientes y el vehículo con la matrícula dada en el
+        // array vehiculos, si el vehículo está disponible se
+        // alquila con la fecha actual, que se obtiene
+        // ejecutando los métodos diaHoy(), mesHoy() y
+        // añoHoy(), cuya declaración no se incluye
+
+        if (vehiculo.getDisponible()) {
+            vehiculo.setDisponible(false);
+            this.alquileres[this.totalAlquileres] = new VehiculoAlquilado(cliente, vehiculo, LocalDate.now(), totalAlquileres);
+
+            this.totalAlquileres++;
+        }
+    }
+
+    public void recibirVehiculo(String matricula) {
+        // busca el vehículo con la matrícula dada en el
+        // array vehiculos y modifica su disponibilidad
+        // para que se pueda alquilar de nuevo
+        Vehiculo vehiculo = getVehiculo(matricula);
+        if (vehiculo != null) {
+            vehiculo.setDisponible(true);
+        }
+    }
 }
