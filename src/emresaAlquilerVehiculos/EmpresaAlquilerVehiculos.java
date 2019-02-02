@@ -161,4 +161,35 @@ public class EmpresaAlquilerVehiculos {
             System.out.println(vehiculos[i].toString());
         }
     }
+    
+    /*alquilarVehiculo(String matricula,String nif,int dias). Modifica
+la disponibilidad del vehículo para indicar que está alquilado y añade un objeto
+de tipo VehiculoAlquilado al array de vehículos alquilados. Para
+registrar el alquiler de un vehículo por un cliente se usa estel método. El
+método getCliente(String nif) busca la referencia del cliente con el NIF
+dado en el array clientes. De forma similar, el método getVehiculo(String
+matricula) busca la referencia del vehículo con la matrícula dada en el
+array vehiculos. Una vez encontrado el vehículo con la matrícula indicada,
+se verifica si está disponible para alquilar y se modifica su
+disponibilidad. A continuación, almacena un objeto de tipo
+VehiculoAlquilado en el array alquileres.Este objeto relaciona un
+cliente, un vehículo, la fecha actual y los días de alquiler.*/
+    private Cliente getCliente(String nif) {
+        for (int i = 0; i < this.getTotalClientes(); i++) {
+            if (this.clientes[i].getNif().equals(nif)) {
+                return this.clientes[i];
+            }
+
+        }
+        return null;
+    }
+
+    private Vehiculo getVehiculo(String matricula) {
+        for (int i = 0; i < this.getTotalVehiculos(); i++) {
+            if (this.vehiculos[i].getMatricula().equals(matricula)) {
+                return this.vehiculos[i];
+            }
+        }
+        return null;
+    }
 }
