@@ -5,6 +5,8 @@
  */
 package emresaAlquilerVehiculos;
 
+import java.util.Random;
+
 /**
  *
  * @author Salva
@@ -18,11 +20,11 @@ public class MisVehiculos {
         EmpresaAlquilerVehiculos easydrive = new EmpresaAlquilerVehiculos("A-28-187189", "easy drive", "www.easydrive.com");
 
         //Registro los clientes de la empresa
-        easydrive.registrarCliente(new Cliente("X5618927C", "Juan", "González López"));
+        easydrive.registrarCliente(new Cliente("X5618927C", "Juan", "GonzÃ¡lez LÃ³pez"));
 
-        easydrive.registrarCliente(new Cliente("Z7568991Y", "Luis", "Fernández Gómez"));
+        easydrive.registrarCliente(new Cliente("Z7568991Y", "Luis", "FernÃ¡ndez GÃ³mez"));
 
-        // registro de los vehículos de la empresa
+        // registro de los vehÃ­culos de la empresa
         easydrive.registrarVehiculo(new Vehiculo("4060 TUR", "Skoda", "Fabia", "Blanco", 90.0, false));
 
         easydrive.registrarVehiculo(new Vehiculo("4070 DEP", "Ford", "Mustang", "Rojo", 150.0, true));
@@ -33,12 +35,12 @@ public class MisVehiculos {
 
         easydrive.registrarVehiculo(new Vehiculo("4100 FUR", "Fiat", "Ducato", "Azul", 80.0, true));
 
-        // imprime la relación de clientes de easydrive
+        // imprime la relaciÃ³n de clientes de easydrive
         easydrive.imprimirClientes();
 
         System.out.println("----------------------------------------------------------------------");
 
-        // imprime el catálogo de vehículos de easydrive
+        // imprime el catÃ¡logo de vehÃ­culos de easydrive
         easydrive.imprimirVehiculos();
 
         System.out.println("----------------------------------------------------------------------");
@@ -54,7 +56,10 @@ public class MisVehiculos {
         easydrive.recibirVehiculo("4100 FUR");
 
         easydrive.imprimirVehiculos();
+        System.out.println("----------------------------------------------------------------------");
 
+        Cliente.clienteAleatorio();
+        Vehiculo.cocheAleatorio();
     }
 
 }
