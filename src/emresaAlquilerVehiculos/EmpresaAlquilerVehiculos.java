@@ -7,7 +7,7 @@ package emresaAlquilerVehiculos;
  */
 
 /**
- *
+ * Faltan m√©todos de rellenar arrays, b√∫squeda binaria y ordenaci√≥n por la burbuja
  * @author Salva
  */
 public class EmpresaAlquilerVehiculos {
@@ -28,7 +28,7 @@ public class EmpresaAlquilerVehiculos {
     private int totalVehiculos;
     private Vehiculo[] vehiculos;
 
-    /* Atributos para controlar el histÛrico de alquileres: total de
+    /* Atributos para controlar el hist√≥rico de alquileres: total de
     alquileres realizados y array de almacenamiento para los objetos
     vehiculoAlquilado*/
     private int totalAlquileres;
@@ -121,20 +121,20 @@ public class EmpresaAlquilerVehiculos {
         this.alquileres = alquileres;
     }
 
-    //AÒade un nuevo cliente a la lista de
-//clientes de la empresa. El mÈtodo registrarCliente(Cliente cliente)
-//almacena un objeto de la clase Cliente en la ˙ltima posiciÛn ˙til del array
-//clientes, dada por la variable totalClientes y a continuaciÛn incrementa
+    //A√±ade un nuevo cliente a la lista de
+//clientes de la empresa. El m√©todo registrarCliente(Cliente cliente)
+//almacena un objeto de la clase Cliente en la √∫ltima posici√≥n √∫til del array
+//clientes, dada por la variable totalClientes y a continuaci√≥n incrementa
 //la variable totalClientes.
     public void registrarCliente(Cliente nuevo) {
         this.clientes[this.totalClientes] = nuevo;
         this.totalClientes++;
     }
 
-//AÒade un vehÌculo al cat·logo
-//de vehÌculos de la empresa. El mÈtodo registrarVehiculo(Vehiculo vehiculo)
-//almacena un objeto de la clase Vehiculo en la ˙ltima posiciÛn del array
-//vehiculos, dada por la variable totalVehiculos y a continuaciÛn incrementa
+//A√±ade un veh√≠culo al cat√°logo
+//de veh√≠culos de la empresa. El m√©todo registrarVehiculo(Vehiculo vehiculo)
+//almacena un objeto de la clase Vehiculo en la √∫ltima posici√≥n del array
+//vehiculos, dada por la variable totalVehiculos y a continuaci√≥n incrementa
 //la variable totalVehiculos.
     public void registrarVehiculo(Vehiculo nuevo) {
         this.vehiculos[this.totalVehiculos] = nuevo;
@@ -142,8 +142,8 @@ public class EmpresaAlquilerVehiculos {
 
     }
 
-    //Muestra la relaciÛn de clientes de la empresa. Este
-//mÈtodo recorre el array clientes y va mostrando los datos de cada
+    //Muestra la relaci√≥n de clientes de la empresa. Este
+//m√©todo recorre el array clientes y va mostrando los datos de cada
 //cliente.
     public void imprimirClientes() {
         System.out.println("NIF cliente\tNombre");
@@ -152,8 +152,8 @@ public class EmpresaAlquilerVehiculos {
         }
     }
 
-//Muestra el cat·logo de vehÌculos de la empresa,
-//recorriendo el array vehiculos y llamando al mÈtodo getAtributos() de cada
+//Muestra el cat√°logo de veh√≠culos de la empresa,
+//recorriendo el array vehiculos y llamando al m√©todo getAtributos() de cada
 //uno .
     public void imprimirVehiculos() {
         System.out.println("Matricula\tModelo\t\tColor\tImporte\tDisponible\n");
@@ -163,17 +163,17 @@ public class EmpresaAlquilerVehiculos {
     }
     
     /*alquilarVehiculo(String matricula,String nif,int dias). Modifica
-la disponibilidad del vehÌculo para indicar que est· alquilado y aÒade un objeto
-de tipo VehiculoAlquilado al array de vehÌculos alquilados. Para
-registrar el alquiler de un vehÌculo por un cliente se usa estel mÈtodo. El
-mÈtodo getCliente(String nif) busca la referencia del cliente con el NIF
-dado en el array clientes. De forma similar, el mÈtodo getVehiculo(String
-matricula) busca la referencia del vehÌculo con la matrÌcula dada en el
-array vehiculos. Una vez encontrado el vehÌculo con la matrÌcula indicada,
-se verifica si est· disponible para alquilar y se modifica su
-disponibilidad. A continuaciÛn, almacena un objeto de tipo
+la disponibilidad del veh√≠culo para indicar que est√° alquilado y a√±ade un objeto
+de tipo VehiculoAlquilado al array de veh√≠culos alquilados. Para
+registrar el alquiler de un veh√≠culo por un cliente se usa estel m√©todo. El
+m√©todo getCliente(String nif) busca la referencia del cliente con el NIF
+dado en el array clientes. De forma similar, el m√©todo getVehiculo(String
+matricula) busca la referencia del veh√≠culo con la matr√≠cula dada en el
+array vehiculos. Una vez encontrado el veh√≠culo con la matr√≠cula indicada,
+se verifica si est√° disponible para alquilar y se modifica su
+disponibilidad. A continuaci√≥n, almacena un objeto de tipo
 VehiculoAlquilado en el array alquileres.Este objeto relaciona un
-cliente, un vehÌculo, la fecha actual y los dÌas de alquiler.*/
+cliente, un veh√≠culo, la fecha actual y los d√≠as de alquiler.*/
     private Cliente getCliente(String nif) {
         for (int i = 0; i < this.getTotalClientes(); i++) {
             if (this.clientes[i].getNif().equals(nif)) {
@@ -197,11 +197,11 @@ cliente, un vehÌculo, la fecha actual y los dÌas de alquiler.*/
         Cliente cliente = getCliente(nif);
         Vehiculo vehiculo = getVehiculo(matricula);
         // busca el cliente con el NIF dado en el array
-        // clientes y el vehÌculo con la matrÌcula dada en el
-        // array vehiculos, si el vehÌculo est· disponible se
+        // clientes y el veh√≠culo con la matr√≠cula dada en el
+        // array vehiculos, si el veh√≠culo est√° disponible se
         // alquila con la fecha actual, que se obtiene
-        // ejecutando los mÈtodos diaHoy(), mesHoy() y
-        // aÒoHoy(), cuya declaraciÛn no se incluye
+        // ejecutando los m√©todos diaHoy(), mesHoy() y
+        // a√±oHoy(), cuya declaraci√≥n no se incluye
 
         if (vehiculo.getDisponible()) {
             vehiculo.setDisponible(false);
@@ -212,7 +212,7 @@ cliente, un vehÌculo, la fecha actual y los dÌas de alquiler.*/
     }
 
     public void recibirVehiculo(String matricula) {
-        // busca el vehÌculo con la matrÌcula dada en el
+        // busca el veh√≠culo con la matr√≠cula dada en el
         // array vehiculos y modifica su disponibilidad
         // para que se pueda alquilar de nuevo
         Vehiculo vehiculo = getVehiculo(matricula);
